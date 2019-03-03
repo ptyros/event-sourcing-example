@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %thread %-5level [%logger] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>target/log/server.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %thread %-5level [%logger] - %msg%n
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily- the "daily" part is defined by the date pattern!!! -->
+            <fileNamePattern>target/log/server.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- maxFileSize: The maximum size of each log file -->
+            <maxFileSize>30MB</maxFileSize>
+            <!-- maxhistory:Maximum of days kept as history-->
+            <maxHistory>5</maxHistory>
+            <!-- totalSizeCap: Maximum total size of logs -->
+            <totalSizeCap>300MB</totalSizeCap>
+        </rollingPolicy>
+
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

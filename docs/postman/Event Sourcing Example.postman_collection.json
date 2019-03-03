@@ -1,0 +1,324 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Event Sourcing Example",
+		"_postman_id": "86baeaf5-710f-bfd4-1767-ac857805f496",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"description": "",
+			"item": [
+				{
+					"name": "Customers",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve All Customers",
+							"request": {
+								"url": "localhost:8080/crud/customers",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve Customer By id",
+							"request": {
+								"url": "localhost:8080/crud/customers/22",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Customer By Id",
+							"request": {
+								"url": "localhost:8080/crud/customers/22",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create Customer",
+							"request": {
+								"url": "localhost:8080/crud/customers",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\":\"Nick\",\n\t\"balance\": 50\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update Customer",
+							"request": {
+								"url": "localhost:8080/crud/customers",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"customerId\":3,\n\t\"name\":\"Nick\",\n\t\"balance\": 60\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Products",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve All Products",
+							"request": {
+								"url": "localhost:8080/crud/products",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve Product By id",
+							"request": {
+								"url": "localhost:8080/crud/products/6",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Product By Id",
+							"request": {
+								"url": "localhost:8080/crud/products/6",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product",
+							"request": {
+								"url": "localhost:8080/crud/products",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"cost\": 66\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update Procuct",
+							"request": {
+								"url": "localhost:8080/crud/products",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 6,\n    \"cost\": 674\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Orders",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve All Orders",
+							"request": {
+								"url": "localhost:8080/crud/orders",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve Order By id",
+							"request": {
+								"url": "localhost:8080/crud/orders/1",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Order By Id",
+							"request": {
+								"url": "localhost:8080/crud/orders/1",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create Order",
+							"request": {
+								"url": "localhost:8080/crud/orders",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"quantity\": 1,\n\t\"product\":{\n\t\t\"productId\":1\n\t},\n\t\"customer\": {\n\t\t\"customerId\":1\n\t},\n\t\"status\":\"PLACED\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order",
+							"request": {
+								"url": "localhost:8080/crud/orders",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"orderId\": 1,\n    \"quantity\": 2,\n    \"product\": {\n        \"productId\": 1,\n        \"cost\": 1\n    },\n\t\"customer\": {\n\t\t\"customerId\":1\n\t},\n    \"status\": \"PLACED\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "SampleDataGenerator",
+			"description": "",
+			"item": [
+				{
+					"name": "Insert Sample Data",
+					"request": {
+						"url": "localhost:8080/sample-data-generator",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Remove All Orders",
+					"request": {
+						"url": "localhost:8080/sample-data-generator/orders",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Remove All Data",
+					"request": {
+						"url": "localhost:8080/sample-data-generator/",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerBalanceManager",
+			"description": "",
+			"item": [
+				{
+					"name": "Top Up Customer",
+					"request": {
+						"url": "localhost:8080/customer-balance-manager/top-up/20/10",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Replace Balance Customer",
+					"request": {
+						"url": "localhost:8080/customer-balance-manager/balance/20/720.33",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
